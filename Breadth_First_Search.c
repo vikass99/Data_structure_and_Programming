@@ -29,7 +29,7 @@ struct Graph
   int* visited;
 };
 
-// BFS algorithm
+                                                                        // BFS algorithm
 void breadthFirstSearch(struct Graph* graph, int startvertex)
 {
   struct queue* q = create_queue();
@@ -39,7 +39,7 @@ void breadthFirstSearch(struct Graph* graph, int startvertex)
 
   while (!is_empty(q))
   {
-  //  printQueue(q);
+                                        //  printQueue(q);
       int current = dequeue(q);
       printf(" %d ", current);
 
@@ -59,7 +59,7 @@ void breadthFirstSearch(struct Graph* graph, int startvertex)
   }
 }
 
-// Creating a node
+                                                                     // Creating a node
 struct node* create_node(int v)
 {
   struct node* newNode = malloc(sizeof(struct node));
@@ -68,7 +68,7 @@ struct node* create_node(int v)
   return newNode;
 }
 
-// Creating a graph
+                                                                     // Creating a graph
 struct Graph* create_graph(int vertices)
 {
   struct Graph* graph = malloc(sizeof(struct Graph));
@@ -87,21 +87,21 @@ struct Graph* create_graph(int vertices)
   return graph;
 }
 
-// Add edge
+                                                                    // Add edge
 void add_edge(struct Graph* graph, int src, int dest)
 {
-  // Add edge from src to dest
+                                                                    // Add edge from src to dest
   struct node* newNode = create_node(dest);
   newNode->next = graph->adjlists[src];
   graph->adjlists[src] = newNode;
 
-  // Add edge from dest to src
+                                                                    // Add edge from dest to src
   newNode = create_node(src);
   newNode->next = graph->adjlists[dest];
   graph->adjlists[dest] = newNode;
 }
 
-// Create a queue
+                                                                    // Create a queue
 struct queue* create_queue()
 {
   struct queue* q = malloc(sizeof(struct queue));
@@ -110,7 +110,7 @@ struct queue* create_queue()
   return q;
 }
 
-// Check if the queue is empty
+                                                                    // Check if the queue is empty
 int is_empty(struct queue* q)
 {
   if (-1==q->rear)
@@ -119,7 +119,7 @@ int is_empty(struct queue* q)
     return 0;
 }
 
-// Adding elements into queue
+                                                                // Adding elements into queue
 void enqueue(struct queue* q, int value)
 {
   if (39==q->rear)
@@ -133,7 +133,7 @@ void enqueue(struct queue* q, int value)
   }
 }
 
-// Removing elements from queue
+                                                                // Removing elements from queue
 int dequeue(struct queue* q)
 {
   int item;
@@ -178,3 +178,4 @@ int main()
   breadthFirstSearch(graph2, 1);
   return 0;
 }
+
