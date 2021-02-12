@@ -34,7 +34,7 @@ int main()
         int x,y;
         for(x=0;x<node;x++) for(y=0;y<node;y++) arr[x][y]=0;
         for(x=0;x<node;x++) visited[x] = 0;
-        if(p==0) node = node+1;          
+                 
         printf("Enter edges between nodes\n");
  
         for(int i=0;i<edge;i++)
